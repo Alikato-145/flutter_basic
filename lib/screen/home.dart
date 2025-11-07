@@ -1,35 +1,45 @@
 import 'package:flutter/material.dart';
-
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Center(
+      child :Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-         Image.network(
-          "https://storage.googleapis.com/cms-storage-bucket/lockup_flutter_vertical.a9d6ce81aee44ae017ee.png",
-          width: 150,height: 150,
+        TextButton(
+          onPressed: (){
+            print("Button Click");
+          }, 
+          child: Text("Click",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
           ),
-          const SizedBox(height: 30,),
-          Image.asset(
-            "assets/images/pic1.png",
-            width:150,height: 150,
+        const SizedBox(height: 10,),
+        FilledButton(
+          onPressed: (){},
+          style: FilledButton.styleFrom(
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white
           ),
-          const SizedBox(height: 30,),
-          Image.asset(
-            "assets/images/pic2.png",
-            width:150,height: 150,
+           child: Text("MANUS",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
+        const SizedBox(height: 10,),
+        OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(
+              color: Colors.red,
+              width: 2
+            )
           ),
-          Container(
-            alignment: Alignment.center,
-            color:Colors.orange,
-            child:const Text("Manus",)
-          )
+          onPressed: (){}, child: Text("MANUS",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
+        const SizedBox(height: 10,),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor:Colors.purple,
+            foregroundColor: Colors.white
+          ),
+          onPressed: (){}, child: Text("MANUS",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
       ],
-    
+    ),
     );
   }
 }
